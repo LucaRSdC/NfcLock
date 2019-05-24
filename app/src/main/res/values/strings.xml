@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">My Application</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Home</string>
+    <string name="cards_string">Cards</string>
+    <string name="Settings_String">Settings</string>
+    <string name="Main_Button">Open</string>
+    <string name="On_string">ON</string>
+    <string name="OFF_String">OFF</string>
+</resources>

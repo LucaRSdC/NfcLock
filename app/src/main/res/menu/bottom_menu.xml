@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/home"
+          android:icon="@drawable/ic_tap_and_play_black_24dp"
+          android:id="@+id/pulsanteSerratura"/>
+    <item android:title="@string/cards_string"
+          android:icon="@drawable/ic_credit_card_black_24dp"
+          android:id="@+id/frameCarte"/>
+    <item android:title="@string/Settings_String"
+          android:icon="@drawable/ic_settings_applications_black_24dp"
+          android:id="@+id/frameNFC"/>
+</menu>
