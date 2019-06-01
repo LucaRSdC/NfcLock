@@ -49,12 +49,14 @@ class PulsanteSerratura : Fragment() {
 
         this.button.setOnClickListener {
             //qui si chiama la funzione per leggere
-            if (value == "OFF") {
-                ref.setValue("ON")//modifica valore presente sul DataBase
-                Log.d("MyActivity", "L'ho Acceso")
-            } else if (value == "ON") {
-                ref.setValue("OFF")
-                Log.d("MyActivity", "L'ho spento")
+            if(::value.isInitialized) {
+                if (value == "OFF" ) {
+                    ref.setValue("ON")//modifica valore presente sul DataBase
+                    Log.d("MyActivity", "L'ho Acceso")
+                } else if (value == "ON") {
+                    ref.setValue("OFF")
+                    Log.d("MyActivity", "L'ho spento")
+                }
             }
         }
     }

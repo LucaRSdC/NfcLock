@@ -4,6 +4,7 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
+import android.support.design.widget.Snackbar
 import android.support.v7.app.ActionBar
 import android.util.Log
 import android.view.View
@@ -22,6 +23,7 @@ import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
+import kotlinx.android.synthetic.main.fragment_pulsante_serratura.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -42,7 +44,7 @@ class MainActivity : AppCompatActivity() {
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id)).requestEmail().build()
-        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+        mGoogleSignInClient = GoogleSignIn.getClient(this@MainActivity, gso);
 
         //bottom menù config
         toolBar = supportActionBar!!
@@ -115,13 +117,13 @@ class MainActivity : AppCompatActivity() {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d("MyActivity", "signInWithCredential:success")
                     val user = mAuth.currentUser
-                    Toast.makeText(applicationContext, "Connesso", Toast.LENGTH_SHORT)
+                    Toast.makeText(applicationContext, "Connesso", Toast.LENGTH_SHORT).show()
                     updateUI(user)
                 } else {
                     // If sign in fails, display a message to the user.
                     Log.w("MyActivity", "signInWithCredential:failure", task.exception)
-                    Toast.makeText(applicationContext, "Connessione Fallita", Toast.LENGTH_SHORT)
-                    //Snackbar.make(applicationContext, "Authentication Failed.", Snackbar.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext, "Connessione Fallita", Toast.LENGTH_SHORT).show()
+                    //Snackbar.make(pulsanteSerratura, "Authentication Failed.", Snackbar.LENGTH_SHORT).show()
                     updateUI(null)
                 }
 
